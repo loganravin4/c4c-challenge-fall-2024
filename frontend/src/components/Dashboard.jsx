@@ -57,7 +57,6 @@ function Dashboard() {
       active: partnerActive
     };
 
-    // Add new partner to partners state
     setPartners(prevPartners => {
       return {
         ...prevPartners,
@@ -65,7 +64,6 @@ function Dashboard() {
       };
     });
 
-    // Clear input fields
     setPartnerName('');
     setPartnerDescription('');
     setPartnerLogo('');
