@@ -80,7 +80,7 @@ function Dashboard() {
           <p><input type="text" value={partnerName} onChange={handlePartnerNameChange} placeholder="Partner name"/></p>
           <p><input type="text" value={partnerDescription} onChange={handlePartnerDescriptionChange} placeholder="Partner description"/></p>
           <p><input type="text" value={partnerLogo} onChange={handlePartnerLogoChange} placeholder="Partner Logo Source"/></p>
-          <p><input type="checkbox" checked={partnerActive} onChange={handlePartnerActiveChange} /> Active?</p>
+          <p><input type="checkbox" checked={partnerActive} onChange={handlePartnerActiveChange} />Active?</p>
           <button className="submit" onClick={handlePartnerSubmit}>Submit</button>
         </div>
       </div>
