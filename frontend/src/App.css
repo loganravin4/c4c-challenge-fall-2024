@@ -32,7 +32,7 @@ h1.title {
 
 .partner-tile {
   width: 450px;
-  height: 400px;
+  height: 500px;
 
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@ h1.title {
   border-radius: 12px;
 
   padding: 25px;
+  position: relative;
 }
 
 .partner-thumbnail {
@@ -52,4 +53,69 @@ h1.title {
 
 .partner-info {
   font-size: 0.9em;
+}
+
+.true-color {
+  font-weight: bold;
+  color: rgb(9, 206, 9);
+}
+
+.false-color {
+  font-weight: bold;
+  color: red;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgb(9, 206, 9);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgb(9, 206, 9);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.submit {
+  background-color: rgb(9, 206, 9);
+  color: white;
 }

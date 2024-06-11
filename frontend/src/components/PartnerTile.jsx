@@ -6,13 +6,18 @@ import React from 'react';
 */
 
 function PartnerTile({ partnerData }) {
-
+  const isActive = partnerData.isActive ? 'true-color' : 'false-color';
   return (
     <div className="partner-tile">
-      <img className="partner-thumbnail" src='' />
+      <img className="partner-thumbnail" src={partnerData.thumbnailUrl} />
       <hr />
       <div className="partner-info">
-        This is some placeholder content - you'll need to replace the content here with actual partner information.
+        <h2>{partnerData.name}</h2>
+        <p className={isActive}>
+          {partnerData.isActive ? 'Active' : 'Inactive'}
+        </p>
+        <p>{partnerData.description}</p>
+        <button className="delete-button">Delete</button>
       </div>
     </div>
   )
