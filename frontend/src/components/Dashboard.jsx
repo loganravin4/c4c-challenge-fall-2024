@@ -28,16 +28,60 @@ function Dashboard() {
     })
   }, [])
 
+  const [partnerName, setPartnerName] = useState('');
+  const [partnerDescription, setPartnerDescription] = useState('');
+  const [partnerLogo, setPartnerLogo] = useState('');
+  const [partnerActive, setPartnerActive] = useState(false);
+
+  function handlePartnerNameChange(event) {
+    setPartnerName(event.target.value);
+  }
+
+  function handlePartnerDescriptionChange(event) {
+    setPartnerDescription(event.target.value);
+  }
+
+  function handlePartnerLogoChange(event) {
+    setPartnerLogo(event.target.value);
+  }
+
+  function handlePartnerActiveChange(event) {
+    setPartnerActive(event.target.checked);
+  }
+
+  function handlePartnerSubmit() {
+    const newPartner = {
+      name: partnerName,
+      description: partnerDescription,
+      logo: partnerLogo,
+      active: partnerActive
+    };
+
+    // Add new partner to partners state
+    setPartners(prevPartners => {
+      return {
+        ...prevPartners,
+        [partnerName]: newPartner
+      };
+    });
+
+    // Clear input fields
+    setPartnerName('');
+    setPartnerDescription('');
+    setPartnerLogo('');
+    setPartnerActive(false);
+  }
+
   return (
     <div id="main-content">
-      <div class="dropdown">
-        <button onclick="toggleDropdown()" class="dropbtn">Add Partner Tile</button>
-        <div id="myDropdown" class="dropdown-content">
-          <p><input type="text" id="textbox1" placeholder="Partner name"/></p>
-          <p><input type="text" id="textbox2" placeholder="Partner description"/></p>
-          <p><input type="text" id="textbox3" placeholder="Partner Logo Source"/></p>
-          <p><input type="checkbox" id="checkbox1" /> Active?</p>
-          <button className="submit">Submit</button>
+      <div className="dropdown">
+        <button onClick={toggleDropdown} className="dropbtn">Add Partner Tile</button>
+        <div id="myDropdown" className="dropdown-content">
+          <p><input type="text" value={partnerName} onChange={handlePartnerNameChange} placeholder="Partner name"/></p>
+          <p><input type="text" value={partnerDescription} onChange={handlePartnerDescriptionChange} placeholder="Partner description"/></p>
+          <p><input type="text" value={partnerLogo} onChange={handlePartnerLogoChange} placeholder="Partner Logo Source"/></p>
+          <p><input type="checkbox" checked={partnerActive} onChange={handlePartnerActiveChange} /> Active?</p>
+          <button className="submit" onClick={handlePartnerSubmit}>Submit</button>
         </div>
       </div>
       <div id="main-partners-grid">
